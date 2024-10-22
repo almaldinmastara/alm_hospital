@@ -45,7 +45,7 @@ return view('admin.showappointment', compact('data','opc'));
 public function approved($id)
 {
 $data=Appointmen::find($id);
-$data->status='approved';
+$data->status='تم قبول الطلب';
 $data->save();
 return redirect()->back();
 
@@ -55,7 +55,7 @@ return redirect()->back();
 public function Cancled($id)
 {
 $data=Appointmen::find($id);
-$data->status='Cancled';
+$data->status='تم الغاءالطلب';
 $data->save();
 return redirect()->back();
 

@@ -57,7 +57,7 @@ else{
     $data->phone = $request->phone;
     $data->message = $request->message;
     $data->doctor = $request->doctor;
-    $data->status = 'in progress';
+    $data->status = 'قيد الطلب';
 
     if(Auth::check())
     {
@@ -320,10 +320,10 @@ public function m_aljeraha()
 
     return $this->mategaAlaskre('الجراحة', 'Matega.m_aljeraha');
 }
-public function m_alasab()
+public function asssab()
 {
 
-    return $this->mategaAlaskre('عيادة الاعصاب', 'Matega.m_alasab');
+    return $this->mategaAlaskre('عيادة الاعصاب', 'Matega.asssab');
 }
 
 
@@ -426,7 +426,7 @@ public function appoint(Request $request)
     $dat->phone = $request->phone;
     $dat->message = $request->message;
     $dat->doctor = $request->doctor;
-    $dat->status = 'in progress';
+    $dat->status = 'قيد الطلب';
 
     if(Auth::check())
     {

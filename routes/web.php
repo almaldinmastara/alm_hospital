@@ -89,7 +89,7 @@ Route::middleware([
     Route::get('/m_msalik', [HomeController::class, 'm_msalik']);
     Route::get('/m_albatna', [HomeController::class, 'm_albatna']);
     Route::get('/m_aljeraha', [HomeController::class, 'm_aljeraha']);
-    Route::get('/m_alasab', [HomeController::class, 'm_alasab']);
+    Route::get('/asssab', [HomeController::class, 'asssab']);
 
 
 

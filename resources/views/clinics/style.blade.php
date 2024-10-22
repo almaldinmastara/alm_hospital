@@ -6,7 +6,7 @@
             <div class="d-flex align-items-center justify-content-between">
             <!--  <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p> -->
             <a href="{{ url('/') }}" class="btn btn-primary" style="padding: 10px 20px; background-color: #007bff; color: white; border-radius: 5px; text-decoration: none; margin-top: 10px; float: right;">
-                الرجوع إلى الصفحة السابقة
+         الرجوع
             </a>
 
 
