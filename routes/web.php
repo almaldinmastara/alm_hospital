@@ -116,8 +116,8 @@ Route::middleware([
 
     Route::get('doctor_CV/{id}', [DoctorController::class, 'showCV'])->name('doctor.cv');//alwakhay
 
-    Route::get('/doctor/{id}/cv', [DoctorController::class, 'showDoctorCv'])->name('doctor.cv');//aldahmani
-    Route::get('/doctor/{id}/cv', [DoctorController::class, 'matega'])->name('doctor.cv');//aldahmani
+    Route::get('doctor_CV/{id}', [DoctorController::class, 'showDoctorCv'])->name('doctor.cv');//aldahmani
+    Route::get('doctor_CV/{id}', [DoctorController::class, 'matega'])->name('doctor.cv');//aldahmani
 
 
 

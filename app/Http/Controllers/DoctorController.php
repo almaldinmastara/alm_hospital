@@ -88,29 +88,32 @@ class DoctorController extends Controller
 
 
 //aldahmani
-    public function showDoctorCv($id)
-    {
+public function showDoctorCv($id)
+{
 
-        $doctor = Doctor::find($id);
+    $doctor = Doctor::find($id);
 
-        if (!$doctor) {
-            return redirect()->back()->with('error', 'الطبيب غير موجود!');
-        }
-
-
-        if ($doctor->cv) {
-            $cvPath = public_path('doctorcv/' . $doctor->cv);
-
-
-            if (file_exists($cvPath)) {
-                return response()->file($cvPath);
-            } else {
-                return redirect()->back()->with('error', 'ملف السيرة الذاتية غير موجود!');
-            }
-        }
-
-        return redirect()->back()->with('error', 'لا يوجد سيرة ذاتية لهذا الطبيب!');
+    if (!$doctor) {
+        return redirect()->back()->with('error', 'الطبيب غير موجود!');
     }
+
+
+    if ($doctor->cv) {
+        $cvPath = public_path('doctorcv/' . $doctor->cv);
+
+
+        if (file_exists($cvPath)) {
+            return response()->file($cvPath);
+        } else {
+            return redirect()->back()->with('error', 'ملف السيرة الذاتية غير موجود!');
+        }
+    }
+
+    return redirect()->back()->with('error', 'لا يوجد سيرة ذاتية لهذا الطبيب!');
+}
+
+
+
 
 
 

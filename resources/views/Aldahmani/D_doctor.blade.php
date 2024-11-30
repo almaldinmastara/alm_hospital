@@ -30,8 +30,8 @@
                         <p class="text-xl mb-0">{{ $D_doctor->name }}</p>
                         <span class="text-sm text-grey">{{ $D_doctor->hire_date }}</span>
 
-                        <!-- رابط لعرض السيرة الذاتية -->
-                        <a class="btn btn-primary btn-md mt-3" href="{{ route('doctor.cv', $D_doctor->id) }}" target="_blank">السيرة الذاتية للطبيب</a>
+                        <a class="btn btn-primary btn-md mt-3" href="{{ route('doctor.cv',$D_doctor->id) }}" target="_blank">السيرة الذاتية للطبيب</a>
+
                     </div>
                 </div>
             </div>
