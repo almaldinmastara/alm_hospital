@@ -3,7 +3,7 @@
   <head>
 
    @include('admin.css')
-
+   <link rel="icon" href="{{ asset('assets/img/matega.jpeg') }}" type="image/x-icon">
   </head>
   <body>
 @include('admin.style')

@@ -17,11 +17,11 @@
         </div>
         <div class="profile-desc d-flex align-items-center">
             <div class="profile-pic">
-                <img class="img-xs rounded-circle" src="admin/assets/images/faces/20.jpg" alt="">
+                <img class="img-xs rounded-circle" src="admin/assets/images/faces/face18.jpg" alt="">
             </div>
             <div>
-                <h5 class="mb-0">علم الدين يوسف</h5>
-                <span>مشرف العيادات</span>
+                <h5 class="mb-0">مشرف عيادات الدهماني</h5>
+
             </div>
         </div>
         <ul class="nav flex-column">

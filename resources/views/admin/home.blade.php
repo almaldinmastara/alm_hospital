@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
   <head>
-
+    <link rel="icon" href="{{ asset('assets/img/matega.jpeg') }}" type="image/x-icon">
    @include('admin.css')
 
   </head>

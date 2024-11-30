@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-
-
-
+use App\Http\Controllers\DoctorController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -113,16 +111,22 @@ Route::middleware([
 
 
 
-    Route::get('lang/{locale}', function ($locale) {
-        if (in_array($locale, ['en', 'ar'])) {
-            session()->put('locale', $locale);
-        }
-        return redirect()->back();
-    });
+    Route::get('/doctor_CV/{id}', [HomeController::class, 'doctor_CV']);
+
+
+    Route::get('doctor_CV/{id}', [DoctorController::class, 'showCV'])->name('doctor.cv');//alwakhay
+
+    Route::get('/doctor/{id}/cv', [DoctorController::class, 'showDoctorCv'])->name('doctor.cv');//aldahmani
+    Route::get('/doctor/{id}/cv', [DoctorController::class, 'matega'])->name('doctor.cv');//aldahmani
 
 
 
 
+
+    Route::get('/search', [DoctorController::class, 'search'])->name('search.route');
+    Route::get('editdoctor/{id}', [DoctorController::class, 'editdoctor']);
+    Route::get('deletedoctor/{id}', [DoctorController::class, 'deletedoctor']);
+    Route::post('update-doctor/{id}', [DoctorController::class, 'update'])->name('update.doctor');
 
 });
 

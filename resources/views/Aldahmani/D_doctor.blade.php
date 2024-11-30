@@ -1,7 +1,14 @@
 <div class="page-section">
     <div class="container-fluid"> <!-- استخدام container-fluid -->
 
-@include('Aldahmani.dctor_css')
+        @include('Aldahmani.dctor_css')
+
+        @if (session()->has('error'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session()->get('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
         <h1 class="text-center custom-title wow fadeInUp">
             وقت الاطباء
@@ -22,6 +29,9 @@
                     <div class="body">
                         <p class="text-xl mb-0">{{ $D_doctor->name }}</p>
                         <span class="text-sm text-grey">{{ $D_doctor->hire_date }}</span>
+
+                        <!-- رابط لعرض السيرة الذاتية -->
+                        <a class="btn btn-primary btn-md mt-3" href="{{ route('doctor.cv', $D_doctor->id) }}" target="_blank">السيرة الذاتية للطبيب</a>
                     </div>
                 </div>
             </div>

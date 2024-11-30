@@ -17,4 +17,4 @@
   <!-- Layout styles -->
   <link rel="stylesheet" href="clinics/assets/css/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="clinics/assets/images/favicon.png" />
+  <link rel="icon" href="{{ asset('assets/img/matega.jpeg') }}" type="image/x-icon">

@@ -9,20 +9,20 @@
         <div class="profile-desc">
           <div class="profile-pic">
             <div class="count-indicator">
-              <img class="img-xs rounded-circle " src="admin/assets/images/faces/20.jpg" alt="">
+              <img class="img-xs rounded-circle " src="admin/assets/images/faces/face18.jpg" alt="">
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">Almaldin yousif</h5>
+              <h5 class="mb-0 font-weight-normal">نظام كل العيادات</h5>
               <span>مشرف النظام</span>
             </div>
           </div>
-          <a href="{{ url('showdoctor') }}" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+          <a href="" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
           <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-            <a href="{{ url('showdoctor') }}"  class="dropdown-item preview-item">
+            <a href=""  class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
-                    <span class="text-primary">تحديث بيانات الدكاترة</span>
+                    <span class="text-primary"></span>
 
                 </div>
               </div>
@@ -31,11 +31,22 @@
           <span class="menu-icon">
             <i class="mdi mdi-account-group"></i>
           </span>
-          <span class="menu-title">Add Doctors</span>
+          <span class="menu-title">اضافة طبيب</span>
         </a>
       </li>
 
+
+
       <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ url('search') }}">
+            <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">عرض كل الاطباء</span>
+        </a>
+    </li>
+
+    <li class="nav-item menu-items">
         <a class="nav-link" href="{{ url('showappointment') }}">
           <span class="menu-icon">
             <i class="mdi mdi-calendar-check"></i> </i>
@@ -52,30 +63,6 @@
             <span >اجمالي المواعيد</span>
             @if(isset($opc) && !empty( $opc))
     <span style="margin-left: 20px;">{{ $opc}}</span>
-@endif
-
-        </a>
-
-
-    </li>
-
-      <li class="nav-item menu-items">
-        <a class="nav-link" href="{{ url('search') }}">
-            <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
-            </span>
-            <span class="menu-title">all doctors</span>
-        </a>
-    </li>
-
-    <li class="nav-item menu-items">
-        <a class="nav-link">
-            <span class="menu-icon">
-                <i class="mdi mdi-account-group"></i>
-            </span>
-            <span >العدد الكلي للدكاترة </span>
-            @if(isset($d) && !empty($d))
-    <span style="margin-left: 20px;">{{ $d }}</span>
 @endif
 
         </a>

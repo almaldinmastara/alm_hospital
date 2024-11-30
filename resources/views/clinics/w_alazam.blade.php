@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
   <title>Maitika Military Clinics Preventive Medicine and Dahmani</title>
-
+  <link rel="icon" href="{{ asset('assets/img/matega.jpeg') }}" type="image/x-icon">
   <link rel="stylesheet" href="../assets/css/maicons.css">
   <link rel="stylesheet" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">

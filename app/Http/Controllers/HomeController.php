@@ -409,7 +409,7 @@ public function D_askhsayatfal ()
 
 public function showAppointmentForm()
 {
-    $doc = Doctor::all(); // استرجاع جميع الأطباء من جدول الأطباء
+    $doc = Doctor::all();
     return view('user.appo_form', compact('doc'));
 }
 
@@ -437,6 +437,18 @@ public function appoint(Request $request)
     return redirect()->back()->with('message','سنتصل بك في اقرب وقت');
 }
 
+
+
+
+public function doctor_CV($id)
+{
+    $doctor = Doctor::find($id);
+    if (!$doctor) {
+        return redirect()->back()->with('message', 'الطبيب غير موجود ');
+    }
+
+    return view('user.doctor_CV', compact('doctor'));
+}
 
 
    }

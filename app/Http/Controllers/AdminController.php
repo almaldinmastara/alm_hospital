@@ -14,23 +14,46 @@ public function addview()
     return view('admin.Add_doctor');
 }
 
+
+
+
+
 public function upload(Request $request)
 {
-    $doctors = new doctor;
-    $image=$request->file;
-    $imagename=time().'.'. $image->getClientoriginalExtension();
-    $request->file->move('doctorimage' ,$imagename);
-    $doctors->image=$imagename;
+    $doctors = new Doctor;
 
-    $doctors->name=$request->name;
-    $doctors->phone=$request->number;
-    $doctors->clinic_name=$request->clinic;
-    $doctors->hire_date=$request->data;
-    $doctors->specialty=$request->specialty;
+    // رفع صورة الطبيب
+    $image = $request->file('file');
+    if ($image) {
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $image->move('doctorimage', $imagename);
+        $doctors->image = $imagename;
+    }
 
-    $doctors->save ();
-    return redirect()->back()->with('message','تم اضافة الطبيب بنجاح');
+    // رفع السيرة الذاتية (CV)
+    $cv = $request->file('cv');
+    if ($cv) {
+        $cvname = time() . '_cv.' . $cv->getClientOriginalExtension();
+        $cv->move('doctorcv', $cvname); // حفظ السيرة الذاتية في مجلد doctorcv
+        $doctors->cv = $cvname; // حفظ اسم الملف في قاعدة البيانات
+    }
+
+    // تخزين البيانات الأخرى
+    $doctors->name = $request->name;
+    $doctors->phone = $request->number;
+    $doctors->clinic_name = $request->clinic;
+    $doctors->hire_date = $request->data;
+    $doctors->specialty = $request->specialty;
+
+    // حفظ البيانات في قاعدة البيانات
+    $doctors->save();
+
+    return redirect()->back()->with('message', 'تم إضافة الطبيب والسيرة الذاتية بنجاح');
 }
+
+
+
+
 
 
 public function showappointment()
@@ -89,7 +112,6 @@ public function updatedoctor($id)
 
 
 
-
 public function editdoctor(Request $request, $id)
 {
     $data = Doctor::find($id);
@@ -98,17 +120,26 @@ public function editdoctor(Request $request, $id)
     $data->specialty = $request->specialty;
     $data->clinic_name = $request->clinic;
 
-    $image = $request->file('file');
 
+    $image = $request->file('file');
     if ($image) {
         $imagename = time() . '.' . $image->getClientOriginalExtension();
         $image->move('doctorimage', $imagename);
         $data->image = $imagename;
     }
 
+
+    $cv = $request->file('cv');
+    if ($cv) {
+        $cvname = time() . '_cv.' . $cv->getClientOriginalExtension();
+        $cv->move('doctorcv', $cvname);
+        $data->cv = $cvname;
+    }
+
+
     $data->save();
 
-    return redirect()->back()->with('message','تم تحديث بيانات الطبيب بنجاح');
+    return redirect()->back()->with('message', 'تم تحديث بيانات الطبيب بنجاح');
 }
 
 
